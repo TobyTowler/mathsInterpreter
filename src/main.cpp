@@ -1,6 +1,4 @@
 #include "lexer.h"
-int main(){
+#include <list>
 
-
-
-}
+int main() { lexer(); }

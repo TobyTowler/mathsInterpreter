@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/Toby/Programming/C++/mathsInterpreter/build",
+  "command": "/usr/bin/clang++  -I/home/Toby/Programming/C++/mathsInterpreter/include -std=gnu++17 -o CMakeFiles/mathsInterpreter.dir/src/main.cpp.o -c /home/Toby/Programming/C++/mathsInterpreter/src/main.cpp",
+  "file": "/home/Toby/Programming/C++/mathsInterpreter/src/main.cpp",
+  "output": "CMakeFiles/mathsInterpreter.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/Toby/Programming/C++/mathsInterpreter/build",
+  "command": "/usr/bin/clang++  -I/home/Toby/Programming/C++/mathsInterpreter/include -std=gnu++17 -o CMakeFiles/mathsInterpreter.dir/src/lexer.cpp.o -c /home/Toby/Programming/C++/mathsInterpreter/src/lexer.cpp",
+  "file": "/home/Toby/Programming/C++/mathsInterpreter/src/lexer.cpp",
+  "output": "CMakeFiles/mathsInterpreter.dir/src/lexer.cpp.o"
+}
+]

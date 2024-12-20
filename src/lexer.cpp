@@ -1,16 +1,9 @@
+#include "lexer.h"
 #include <list>
-std::list<char> lexer(){
-    std::list<char> charList;
+#include <string>
 
+std::list<char> lexer(std::string input) {
+    std::list<char> tokens;
 
-
-
-
-    return charList;
-
-
-
+    return tokens;
 }
-
-
-

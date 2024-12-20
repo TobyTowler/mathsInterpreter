@@ -1,0 +1,1 @@
+/usr/bin/clang++ CMakeFiles/mathsInterpreter.dir/src/main.cpp.o CMakeFiles/mathsInterpreter.dir/src/lexer.cpp.o -o mathsInterpreter
