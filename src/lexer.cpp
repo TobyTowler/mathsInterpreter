@@ -1,12 +1,10 @@
 #include "lexer.h"
-#include "type.h"
-#include "utils.h"
 #include <vector>
 
-void lexInput(string str) {
-    vector<char> input(str.begin(), str.end());
+std::vector<type> lexInput(std::string str) {
+    std::vector<char> input(str.begin(), str.end());
 
-    vector<type> equation;
+    std::vector<type> lexemes;
     bool decimal = false;
 
     double val = 0;
@@ -21,11 +19,27 @@ void lexInput(string str) {
         } else if (c == '.') {
             decimal = true;
         } else {
-            equation.push_back(static_cast<type>(val));
+            lexemes.push_back(static_cast<type>(val));
             val = 0;
             decimal = false;
         }
 
-        switch (c) { case +: }
+        switch (c) {
+        case '+':
+            lexemes.push_back(Plus);
+            break;
+        case '-':
+            lexemes.push_back(Minus);
+            break;
+        case '+':
+            lexemes.push_back(Int);
+            break;
+        case '+':
+            lexemes.push_back(Float);
+            break;
+        case '+':
+            lexemes.push_back(Plus);
+            break;
+        }
     }
 }

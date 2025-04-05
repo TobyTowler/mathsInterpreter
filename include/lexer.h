@@ -1,6 +1,7 @@
 #pragma once
 
+#include "type.h"
 #include <string>
-using namespace std;
+#include <vector>
 
-void lexInput(string str);
+std::vector<type> lexInput(std::string str);
