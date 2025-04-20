@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/toby/Programming/CPP/mathsInterpreter/src/lexer.cpp" "CMakeFiles/Interpreter.dir/src/lexer.cpp.o" "gcc" "CMakeFiles/Interpreter.dir/src/lexer.cpp.o.d"
-  "/home/toby/Programming/CPP/mathsInterpreter/src/main.cpp" "CMakeFiles/Interpreter.dir/src/main.cpp.o" "gcc" "CMakeFiles/Interpreter.dir/src/main.cpp.o.d"
+  "/home/toby/Programming/C++/mathsInterpreter/src/lexer.cpp" "CMakeFiles/Interpreter.dir/src/lexer.cpp.o" "gcc" "CMakeFiles/Interpreter.dir/src/lexer.cpp.o.d"
+  "/home/toby/Programming/C++/mathsInterpreter/src/main.cpp" "CMakeFiles/Interpreter.dir/src/main.cpp.o" "gcc" "CMakeFiles/Interpreter.dir/src/main.cpp.o.d"
   "" "Interpreter" "gcc" "CMakeFiles/Interpreter.dir/link.d"
   )
 

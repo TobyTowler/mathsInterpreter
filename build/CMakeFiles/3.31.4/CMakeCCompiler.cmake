@@ -31,7 +31,7 @@ set(CMAKE_LINKER_LINK "")
 set(CMAKE_LINKER_LLD "")
 set(CMAKE_C_COMPILER_LINKER "/usr/bin/ld")
 set(CMAKE_C_COMPILER_LINKER_ID "GNU")
-set(CMAKE_C_COMPILER_LINKER_VERSION 2.44)
+set(CMAKE_C_COMPILER_LINKER_VERSION 2.41)
 set(CMAKE_C_COMPILER_LINKER_FRONTEND_VARIANT GNU)
 set(CMAKE_MT "")
 set(CMAKE_TAPI "CMAKE_TAPI-NOTFOUND")
@@ -75,7 +75,7 @@ endif()
 
 
 
-set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include;/usr/local/include;/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include-fixed;/usr/include")
+set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/usr/lib/gcc/x86_64-redhat-linux/14/include;/usr/local/include;/usr/include")
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "gcc;gcc_s;c;gcc;gcc_s")
-set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1;/usr/lib;/lib")
+set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "/usr/lib/gcc/x86_64-redhat-linux/14;/usr/lib64;/lib64;/usr/lib")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

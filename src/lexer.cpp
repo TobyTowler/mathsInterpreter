@@ -1,8 +1,22 @@
 #include "lexer.h"
+#include "type.h"
+#include <algorithm>
 #include <vector>
 
 std::vector<type> lexInput(std::string str) {
+
+    str.erase(
+        std::remove_if(str.begin(), str.end(), [](unsigned char c) { return std::isspace(c); }),
+        str.end());
+
     std::vector<char> input(str.begin(), str.end());
+
+    for (size_t i = 0; i < input.size(); i++) {
+        std::cout << input[i];
+        if (i < input.size() - 1)
+            std::cout << "";
+    }
+    std::cout << std::endl;
 
     std::vector<type> lexemes;
     bool decimal = false;
@@ -19,7 +33,11 @@ std::vector<type> lexInput(std::string str) {
         } else if (c == '.') {
             decimal = true;
         } else {
-            lexemes.push_back(static_cast<type>(val));
+            if (decimal) {
+                lexemes.push_back(Float);
+            } else {
+                lexemes.push_back(Int);
+            }
             val = 0;
             decimal = false;
         }
@@ -31,15 +49,16 @@ std::vector<type> lexInput(std::string str) {
         case '-':
             lexemes.push_back(Minus);
             break;
-        case '+':
-            lexemes.push_back(Int);
+        case '*':
+            lexemes.push_back(Multiply);
             break;
-        case '+':
-            lexemes.push_back(Float);
+        case '/':
+            lexemes.push_back(Divide);
             break;
-        case '+':
+        case '(':
             lexemes.push_back(Plus);
             break;
         }
     }
+    return lexemes;
 }
