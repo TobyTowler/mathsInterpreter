@@ -129,6 +129,30 @@ Interpreter/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Interpreter.dir/build.make CMakeFiles/Interpreter.dir/build
 .PHONY : Interpreter/fast
 
+src/evaluate.o: src/evaluate.cpp.o
+.PHONY : src/evaluate.o
+
+# target to build an object file
+src/evaluate.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Interpreter.dir/build.make CMakeFiles/Interpreter.dir/src/evaluate.cpp.o
+.PHONY : src/evaluate.cpp.o
+
+src/evaluate.i: src/evaluate.cpp.i
+.PHONY : src/evaluate.i
+
+# target to preprocess a source file
+src/evaluate.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Interpreter.dir/build.make CMakeFiles/Interpreter.dir/src/evaluate.cpp.i
+.PHONY : src/evaluate.cpp.i
+
+src/evaluate.s: src/evaluate.cpp.s
+.PHONY : src/evaluate.s
+
+# target to generate assembly for a file
+src/evaluate.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Interpreter.dir/build.make CMakeFiles/Interpreter.dir/src/evaluate.cpp.s
+.PHONY : src/evaluate.cpp.s
+
 src/lexer.o: src/lexer.cpp.o
 .PHONY : src/lexer.o
 
@@ -177,6 +201,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Interpreter.dir/build.make CMakeFiles/Interpreter.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/parser.o: src/parser.cpp.o
+.PHONY : src/parser.o
+
+# target to build an object file
+src/parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Interpreter.dir/build.make CMakeFiles/Interpreter.dir/src/parser.cpp.o
+.PHONY : src/parser.cpp.o
+
+src/parser.i: src/parser.cpp.i
+.PHONY : src/parser.i
+
+# target to preprocess a source file
+src/parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Interpreter.dir/build.make CMakeFiles/Interpreter.dir/src/parser.cpp.i
+.PHONY : src/parser.cpp.i
+
+src/parser.s: src/parser.cpp.s
+.PHONY : src/parser.s
+
+# target to generate assembly for a file
+src/parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Interpreter.dir/build.make CMakeFiles/Interpreter.dir/src/parser.cpp.s
+.PHONY : src/parser.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +234,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Interpreter"
+	@echo "... src/evaluate.o"
+	@echo "... src/evaluate.i"
+	@echo "... src/evaluate.s"
 	@echo "... src/lexer.o"
 	@echo "... src/lexer.i"
 	@echo "... src/lexer.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/parser.o"
+	@echo "... src/parser.i"
+	@echo "... src/parser.s"
 .PHONY : help
 
 

@@ -4,4 +4,4 @@
 #include <string>
 #include <vector>
 
-std::vector<type> lexInput(std::string str);
+std::pair<std::vector<type>, std::vector<std::string>> lexInput(std::string str);

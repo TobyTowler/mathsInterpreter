@@ -1,7 +1,7 @@
-CMakeFiles/Interpreter.dir/src/main.cpp.o: \
- /home/toby/Programming/C++/mathsInterpreter/src/main.cpp \
+CMakeFiles/Interpreter.dir/src/parser.cpp.o: \
+ /home/toby/Programming/C++/mathsInterpreter/src/parser.cpp \
  /usr/include/stdc-predef.h \
- /home/toby/Programming/C++/mathsInterpreter/include/evaluate.h \
+ /home/toby/Programming/C++/mathsInterpreter/include/parser.h \
  /home/toby/Programming/C++/mathsInterpreter/include/type.h \
  /usr/include/c++/14/iostream /usr/include/c++/14/bits/requires_hosted.h \
  /usr/include/c++/14/x86_64-redhat-linux/bits/c++config.h \
@@ -134,6 +134,4 @@ CMakeFiles/Interpreter.dir/src/main.cpp.o: \
  /usr/include/c++/14/bits/stl_uninitialized.h \
  /usr/include/c++/14/bits/stl_vector.h \
  /usr/include/c++/14/bits/stl_bvector.h \
- /usr/include/c++/14/bits/vector.tcc \
- /home/toby/Programming/C++/mathsInterpreter/include/lexer.h \
- /home/toby/Programming/C++/mathsInterpreter/include/parser.h
+ /usr/include/c++/14/bits/vector.tcc

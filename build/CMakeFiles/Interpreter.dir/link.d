@@ -2,8 +2,10 @@ Interpreter: \
   /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o \
   /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o \
   /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o \
+  CMakeFiles/Interpreter.dir/src/evaluate.cpp.o \
   CMakeFiles/Interpreter.dir/src/lexer.cpp.o \
   CMakeFiles/Interpreter.dir/src/main.cpp.o \
+  CMakeFiles/Interpreter.dir/src/parser.cpp.o \
   /usr/lib/gcc/x86_64-redhat-linux/14/libstdc++.so \
   /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/libm.so \
   /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/libm.so \
@@ -38,9 +40,13 @@ Interpreter: \
 
 /usr/lib/gcc/x86_64-redhat-linux/14/crtbegin.o:
 
+CMakeFiles/Interpreter.dir/src/evaluate.cpp.o:
+
 CMakeFiles/Interpreter.dir/src/lexer.cpp.o:
 
 CMakeFiles/Interpreter.dir/src/main.cpp.o:
+
+CMakeFiles/Interpreter.dir/src/parser.cpp.o:
 
 /usr/lib/gcc/x86_64-redhat-linux/14/libstdc++.so:
 

@@ -1,6 +1,12 @@
 [
 {
   "directory": "/home/toby/Programming/C++/mathsInterpreter/build",
+  "command": "/usr/bin/c++  -I/home/toby/Programming/C++/mathsInterpreter/include  -o CMakeFiles/Interpreter.dir/src/evaluate.cpp.o -c /home/toby/Programming/C++/mathsInterpreter/src/evaluate.cpp",
+  "file": "/home/toby/Programming/C++/mathsInterpreter/src/evaluate.cpp",
+  "output": "CMakeFiles/Interpreter.dir/src/evaluate.cpp.o"
+},
+{
+  "directory": "/home/toby/Programming/C++/mathsInterpreter/build",
   "command": "/usr/bin/c++  -I/home/toby/Programming/C++/mathsInterpreter/include  -o CMakeFiles/Interpreter.dir/src/lexer.cpp.o -c /home/toby/Programming/C++/mathsInterpreter/src/lexer.cpp",
   "file": "/home/toby/Programming/C++/mathsInterpreter/src/lexer.cpp",
   "output": "CMakeFiles/Interpreter.dir/src/lexer.cpp.o"
@@ -10,5 +16,11 @@
   "command": "/usr/bin/c++  -I/home/toby/Programming/C++/mathsInterpreter/include  -o CMakeFiles/Interpreter.dir/src/main.cpp.o -c /home/toby/Programming/C++/mathsInterpreter/src/main.cpp",
   "file": "/home/toby/Programming/C++/mathsInterpreter/src/main.cpp",
   "output": "CMakeFiles/Interpreter.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/toby/Programming/C++/mathsInterpreter/build",
+  "command": "/usr/bin/c++  -I/home/toby/Programming/C++/mathsInterpreter/include  -o CMakeFiles/Interpreter.dir/src/parser.cpp.o -c /home/toby/Programming/C++/mathsInterpreter/src/parser.cpp",
+  "file": "/home/toby/Programming/C++/mathsInterpreter/src/parser.cpp",
+  "output": "CMakeFiles/Interpreter.dir/src/parser.cpp.o"
 }
 ]

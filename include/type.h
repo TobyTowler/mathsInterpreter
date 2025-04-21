@@ -8,6 +8,8 @@ enum type {
     Minus,
     Divide,
     Multiply,
+    OpenParen,
+    CloseParen,
 };
 
 inline void printType(type type) {
@@ -29,6 +31,12 @@ inline void printType(type type) {
         break;
     case Multiply:
         std::cout << "Multiply";
+        break;
+    case OpenParen:
+        std::cout << "OpenParen";
+        break;
+    case CloseParen:
+        std::cout << "CloseParen";
         break;
     default:
         std::cout << "Unknown";

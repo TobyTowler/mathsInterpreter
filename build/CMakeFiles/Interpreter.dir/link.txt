@@ -1,1 +1,1 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/Interpreter.dir/link.d CMakeFiles/Interpreter.dir/src/lexer.cpp.o CMakeFiles/Interpreter.dir/src/main.cpp.o -o Interpreter
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/Interpreter.dir/link.d CMakeFiles/Interpreter.dir/src/evaluate.cpp.o CMakeFiles/Interpreter.dir/src/lexer.cpp.o CMakeFiles/Interpreter.dir/src/main.cpp.o CMakeFiles/Interpreter.dir/src/parser.cpp.o -o Interpreter

@@ -72,10 +72,24 @@ include CMakeFiles/Interpreter.dir/flags.make
 CMakeFiles/Interpreter.dir/codegen:
 .PHONY : CMakeFiles/Interpreter.dir/codegen
 
+CMakeFiles/Interpreter.dir/src/evaluate.cpp.o: CMakeFiles/Interpreter.dir/flags.make
+CMakeFiles/Interpreter.dir/src/evaluate.cpp.o: /home/toby/Programming/C++/mathsInterpreter/src/evaluate.cpp
+CMakeFiles/Interpreter.dir/src/evaluate.cpp.o: CMakeFiles/Interpreter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/toby/Programming/C++/mathsInterpreter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Interpreter.dir/src/evaluate.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Interpreter.dir/src/evaluate.cpp.o -MF CMakeFiles/Interpreter.dir/src/evaluate.cpp.o.d -o CMakeFiles/Interpreter.dir/src/evaluate.cpp.o -c /home/toby/Programming/C++/mathsInterpreter/src/evaluate.cpp
+
+CMakeFiles/Interpreter.dir/src/evaluate.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Interpreter.dir/src/evaluate.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/toby/Programming/C++/mathsInterpreter/src/evaluate.cpp > CMakeFiles/Interpreter.dir/src/evaluate.cpp.i
+
+CMakeFiles/Interpreter.dir/src/evaluate.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Interpreter.dir/src/evaluate.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/toby/Programming/C++/mathsInterpreter/src/evaluate.cpp -o CMakeFiles/Interpreter.dir/src/evaluate.cpp.s
+
 CMakeFiles/Interpreter.dir/src/lexer.cpp.o: CMakeFiles/Interpreter.dir/flags.make
 CMakeFiles/Interpreter.dir/src/lexer.cpp.o: /home/toby/Programming/C++/mathsInterpreter/src/lexer.cpp
 CMakeFiles/Interpreter.dir/src/lexer.cpp.o: CMakeFiles/Interpreter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/toby/Programming/C++/mathsInterpreter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Interpreter.dir/src/lexer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/toby/Programming/C++/mathsInterpreter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Interpreter.dir/src/lexer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Interpreter.dir/src/lexer.cpp.o -MF CMakeFiles/Interpreter.dir/src/lexer.cpp.o.d -o CMakeFiles/Interpreter.dir/src/lexer.cpp.o -c /home/toby/Programming/C++/mathsInterpreter/src/lexer.cpp
 
 CMakeFiles/Interpreter.dir/src/lexer.cpp.i: cmake_force
@@ -89,7 +103,7 @@ CMakeFiles/Interpreter.dir/src/lexer.cpp.s: cmake_force
 CMakeFiles/Interpreter.dir/src/main.cpp.o: CMakeFiles/Interpreter.dir/flags.make
 CMakeFiles/Interpreter.dir/src/main.cpp.o: /home/toby/Programming/C++/mathsInterpreter/src/main.cpp
 CMakeFiles/Interpreter.dir/src/main.cpp.o: CMakeFiles/Interpreter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/toby/Programming/C++/mathsInterpreter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Interpreter.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/toby/Programming/C++/mathsInterpreter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Interpreter.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Interpreter.dir/src/main.cpp.o -MF CMakeFiles/Interpreter.dir/src/main.cpp.o.d -o CMakeFiles/Interpreter.dir/src/main.cpp.o -c /home/toby/Programming/C++/mathsInterpreter/src/main.cpp
 
 CMakeFiles/Interpreter.dir/src/main.cpp.i: cmake_force
@@ -100,20 +114,38 @@ CMakeFiles/Interpreter.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Interpreter.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/toby/Programming/C++/mathsInterpreter/src/main.cpp -o CMakeFiles/Interpreter.dir/src/main.cpp.s
 
+CMakeFiles/Interpreter.dir/src/parser.cpp.o: CMakeFiles/Interpreter.dir/flags.make
+CMakeFiles/Interpreter.dir/src/parser.cpp.o: /home/toby/Programming/C++/mathsInterpreter/src/parser.cpp
+CMakeFiles/Interpreter.dir/src/parser.cpp.o: CMakeFiles/Interpreter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/toby/Programming/C++/mathsInterpreter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Interpreter.dir/src/parser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Interpreter.dir/src/parser.cpp.o -MF CMakeFiles/Interpreter.dir/src/parser.cpp.o.d -o CMakeFiles/Interpreter.dir/src/parser.cpp.o -c /home/toby/Programming/C++/mathsInterpreter/src/parser.cpp
+
+CMakeFiles/Interpreter.dir/src/parser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Interpreter.dir/src/parser.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/toby/Programming/C++/mathsInterpreter/src/parser.cpp > CMakeFiles/Interpreter.dir/src/parser.cpp.i
+
+CMakeFiles/Interpreter.dir/src/parser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Interpreter.dir/src/parser.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/toby/Programming/C++/mathsInterpreter/src/parser.cpp -o CMakeFiles/Interpreter.dir/src/parser.cpp.s
+
 # Object files for target Interpreter
 Interpreter_OBJECTS = \
+"CMakeFiles/Interpreter.dir/src/evaluate.cpp.o" \
 "CMakeFiles/Interpreter.dir/src/lexer.cpp.o" \
-"CMakeFiles/Interpreter.dir/src/main.cpp.o"
+"CMakeFiles/Interpreter.dir/src/main.cpp.o" \
+"CMakeFiles/Interpreter.dir/src/parser.cpp.o"
 
 # External object files for target Interpreter
 Interpreter_EXTERNAL_OBJECTS =
 
+Interpreter: CMakeFiles/Interpreter.dir/src/evaluate.cpp.o
 Interpreter: CMakeFiles/Interpreter.dir/src/lexer.cpp.o
 Interpreter: CMakeFiles/Interpreter.dir/src/main.cpp.o
+Interpreter: CMakeFiles/Interpreter.dir/src/parser.cpp.o
 Interpreter: CMakeFiles/Interpreter.dir/build.make
 Interpreter: CMakeFiles/Interpreter.dir/compiler_depend.ts
 Interpreter: CMakeFiles/Interpreter.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/toby/Programming/C++/mathsInterpreter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Interpreter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/toby/Programming/C++/mathsInterpreter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Interpreter"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Interpreter.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
