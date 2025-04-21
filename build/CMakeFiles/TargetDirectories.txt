@@ -1,3 +1,0 @@
-/home/toby/Programming/C++/mathsInterpreter/build/CMakeFiles/Interpreter.dir
-/home/toby/Programming/C++/mathsInterpreter/build/CMakeFiles/edit_cache.dir
-/home/toby/Programming/C++/mathsInterpreter/build/CMakeFiles/rebuild_cache.dir
