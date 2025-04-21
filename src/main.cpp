@@ -5,7 +5,8 @@
 
 int main() {
     try {
-        std::string input = "4.4 + (4 / 5.3)";
+        // std::string input = "4.4 + (4 / 5.3)";
+        std::string input = "4.4 + 4 / 5.3";
         std::pair<std::vector<type>, std::vector<std::string>> arr = lexInput(input);
         std::vector<type> lexedTypes = arr.first;
         std::vector<std::string> lexedValues = arr.second;
