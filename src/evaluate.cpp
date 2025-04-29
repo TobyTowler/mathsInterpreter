@@ -1,10 +1,11 @@
 #include "evaluate.h"
 #include "type.h"
 #include <charconv>
+#include <cstddef>
 #include <stdexcept>
 
 int convertToInt(std::string str) {
-    double result = 0;
+    int result = 0;
 
     auto [ptr, ec] = std::from_chars(str.data(), str.data() + str.size(), result);
     if (ec == std::errc()) {
@@ -14,7 +15,7 @@ int convertToInt(std::string str) {
 }
 
 float convertToFloat(std::string str) {
-    double result = 0;
+    float result = 0;
 
     auto [ptr, ec] = std::from_chars(str.data(), str.data() + str.size(), result);
     if (ec == std::errc()) {
@@ -23,6 +24,13 @@ float convertToFloat(std::string str) {
     throw std::runtime_error("Evaluation error: error converting to float");
 }
 
+/*
+ * first and last item is always number
+ *
+ *
+ *
+ *
+ */
 double evalInput(std::vector<type> types, std::vector<std::string> values) {
     double currentSum = 0;
     switch (types[0]) {
@@ -38,9 +46,13 @@ double evalInput(std::vector<type> types, std::vector<std::string> values) {
         throw std::runtime_error("Unknown Error");
     }
 
+    types.erase(types.begin());
+    types.erase(types.begin());
+    values.erase(values.begin());
+
     double nextVal;
     type nextOp;
-    size_t valCounter = 1;
+    size_t valCounter = 0;
     for (type t : types) {
         switch (t) {
         case Int:
@@ -53,7 +65,7 @@ double evalInput(std::vector<type> types, std::vector<std::string> values) {
             break;
         case Plus:
             nextOp = Plus;
-            currentSum += nextVal;
+            currentSum = currentSum + nextVal;
             break;
         case Minus:
             nextOp = Minus;
@@ -76,7 +88,9 @@ double evalInput(std::vector<type> types, std::vector<std::string> values) {
         default:
             std::cout << "Unknown";
         }
-        std::cout << "Current SUM" << currentSum << "\n";
+        std::cout << "Current sum = " << currentSum << "\n";
+        std::cout << "Next val" << nextVal << "\n";
+        std::cout << "Next op" << nextOp << "\n";
     }
     switch (nextOp) {
     case Plus:
@@ -94,5 +108,6 @@ double evalInput(std::vector<type> types, std::vector<std::string> values) {
     default:
         break;
     }
+    std::cout << "RETURNING" << std::endl;
     return currentSum;
 }
