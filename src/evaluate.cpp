@@ -4,7 +4,7 @@
 #include <stdexcept>
 
 int convertToInt(std::string str) {
-    int result = 0;
+    double result = 0;
 
     auto [ptr, ec] = std::from_chars(str.data(), str.data() + str.size(), result);
     if (ec == std::errc()) {
@@ -14,7 +14,7 @@ int convertToInt(std::string str) {
 }
 
 float convertToFloat(std::string str) {
-    float result = 0;
+    double result = 0;
 
     auto [ptr, ec] = std::from_chars(str.data(), str.data() + str.size(), result);
     if (ec == std::errc()) {
@@ -24,17 +24,18 @@ float convertToFloat(std::string str) {
 }
 
 double evalInput(std::vector<type> types, std::vector<std::string> values) {
-    double value = 0;
-
+    double currentSum = 0;
     switch (types[0]) {
     case Int:
-        value = convertToInt(values[0]);
+        currentSum = convertToInt(values[0]);
         break;
     case Float:
-        value = convertToFloat(values[0]);
+        currentSum = convertToFloat(values[0]);
         break;
     case OpenParen:
         break;
+    default:
+        throw std::runtime_error("Unknown Error");
     }
 
     double nextVal;
@@ -44,21 +45,27 @@ double evalInput(std::vector<type> types, std::vector<std::string> values) {
         switch (t) {
         case Int:
             nextVal = convertToInt(values[valCounter]);
+            valCounter++;
             break;
         case Float:
             nextVal = convertToFloat(values[valCounter]);
+            valCounter++;
             break;
         case Plus:
             nextOp = Plus;
+            currentSum += nextVal;
             break;
         case Minus:
             nextOp = Minus;
+            currentSum -= nextVal;
             break;
         case Divide:
             nextOp = Divide;
+            currentSum /= nextVal;
             break;
         case Multiply:
             nextOp = Multiply;
+            currentSum *= nextVal;
             break;
         case OpenParen:
             nextOp = OpenParen;
@@ -69,6 +76,23 @@ double evalInput(std::vector<type> types, std::vector<std::string> values) {
         default:
             std::cout << "Unknown";
         }
+        std::cout << "Current SUM" << currentSum << "\n";
     }
-    return value;
+    switch (nextOp) {
+    case Plus:
+        currentSum += nextVal;
+        break;
+    case Minus:
+        currentSum -= nextVal;
+        break;
+    case Divide:
+        currentSum /= nextVal;
+        break;
+    case Multiply:
+        currentSum *= nextVal;
+        break;
+    default:
+        break;
+    }
+    return currentSum;
 }
