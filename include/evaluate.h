@@ -4,4 +4,9 @@
 #include <string>
 #include <vector>
 
-double evalInput(std::vector<type> types, std::vector<std::string> values);
+struct numbers {
+    double val;
+    size_t typeCounter;
+    size_t valCounter;
+};
+numbers evalInput(std::vector<type> types, std::vector<std::string> values, size_t counter);

@@ -34,7 +34,9 @@ void parseInput(std::vector<type> input) {
                 nextIsNum = true;
                 break;
             case CloseParen:
-                nextIsNum = true;
+                nextIsNum = false;
+                break;
+            case OpenParen:
                 break;
             default:
                 throw std::runtime_error("Parser error");

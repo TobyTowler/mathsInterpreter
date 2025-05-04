@@ -49,32 +49,54 @@ double doMaths(double cs, double nv, type nextOp) {
  *
  *
  */
-double evalInput(std::vector<type> types, std::vector<std::string> values) {
-    // std::cout << "types";
+numbers evalInput(std::vector<type> types, std::vector<std::string> values, size_t counter) {
+    // std::cout << "\n\ntypes";
     // for (type t : types) {
     //     printType(t);
     // }
     double currentSum = 0;
-    double nextVal = 0;
     type nextOp;
-    size_t valCounter = 1;
+    size_t valCounter = counter;
+    size_t typeCounter = 1;
 
     switch (types[0]) {
     case Int:
         currentSum = convertToInt(values[0]);
+        types.erase(types.begin());
         break;
     case Float:
         currentSum = convertToFloat(values[0]);
+        types.erase(types.begin());
         break;
-    case OpenParen:
+    case OpenParen: {
+        std::vector<type> shortTypes;
+        shortTypes.reserve(types.size() - typeCounter);
+        shortTypes.assign(types.begin(), types.end());
+        std::cout << shortTypes.size();
+        std::cout << "\n\ntypes";
+        for (type t : shortTypes) {
+            printType(t);
+        }
+        numbers nums = evalInput(shortTypes, values, valCounter);
+        std::cout << "TYPES" << typeCounter << "\n";
+        typeCounter = nums.typeCounter;
+        valCounter = nums.valCounter;
+        if (typeCounter >= types.size() - 1) {
+            return nums;
+        }
+        std::cout << "DONE";
         break;
+    }
     default:
         throw std::runtime_error("Unknown Error");
     }
 
-    types.erase(types.begin());
-
     for (type t : types) {
+        std::cout << "\n\ntypes";
+        for (type t : types) {
+            printType(t);
+        }
+        typeCounter++;
         switch (t) {
         case Int:
             currentSum = doMaths(currentSum, convertToInt(values[valCounter]), nextOp);
@@ -97,18 +119,34 @@ double evalInput(std::vector<type> types, std::vector<std::string> values) {
         case Multiply:
             nextOp = Multiply;
             break;
-        case OpenParen:
-            nextOp = OpenParen;
+        case OpenParen: {
+            std::vector<type> shortTypes;
+            shortTypes.reserve(types.size() - typeCounter);
+            shortTypes.assign(types.begin() + typeCounter - 1, types.end());
+            std::cout << shortTypes.size();
+            std::cout << "\n\ntypes";
+            for (type t : shortTypes) {
+                printType(t);
+            }
+            numbers nums = evalInput(shortTypes, values, valCounter);
+            std::cout << "TYPES" << typeCounter << "\n";
+            typeCounter = nums.typeCounter;
+            valCounter = nums.valCounter;
+            if (typeCounter >= types.size() - 1) {
+                return nums;
+            }
+            std::cout << "DONE";
+            currentSum = doMaths(currentSum, nums.val, nextOp);
             break;
+        }
         case CloseParen:
-            nextOp = CloseParen;
+            return {currentSum, typeCounter, valCounter};
             break;
         default:
             std::cout << "Unknown";
         }
         std::cout << "\nCurrent sum = " << currentSum << "\n";
         printType(nextOp);
-        std::cout << "\nNext val" << nextVal << "\n";
     }
     // switch (nextOp) {
     // case Plus:
@@ -127,5 +165,5 @@ double evalInput(std::vector<type> types, std::vector<std::string> values) {
     //     break;
     // }
     std::cout << "RETURNING" << std::endl;
-    return currentSum;
+    return {currentSum, typeCounter, valCounter};
 }
