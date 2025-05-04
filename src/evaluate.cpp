@@ -24,15 +24,41 @@ float convertToFloat(std::string str) {
     throw std::runtime_error("Evaluation error: error converting to float");
 }
 
+double doMaths(double cs, double nv, type nextOp) {
+    switch (nextOp) {
+    case Plus:
+        return cs += nv;
+    case Minus:
+        return cs -= nv;
+    case Divide:
+        return cs /= nv;
+    case Multiply:
+        return cs *= nv;
+    default:
+        throw std::runtime_error("Failed operation");
+    }
+}
+
 /*
  * first and last item is always number
  *
+ * n ... o ... n
  *
+ * 4 + 4 - 4
+ * 4 + (4 + 4)
  *
  *
  */
 double evalInput(std::vector<type> types, std::vector<std::string> values) {
+    // std::cout << "types";
+    // for (type t : types) {
+    //     printType(t);
+    // }
     double currentSum = 0;
+    double nextVal = 0;
+    type nextOp;
+    size_t valCounter = 1;
+
     switch (types[0]) {
     case Int:
         currentSum = convertToInt(values[0]);
@@ -47,37 +73,29 @@ double evalInput(std::vector<type> types, std::vector<std::string> values) {
     }
 
     types.erase(types.begin());
-    types.erase(types.begin());
-    values.erase(values.begin());
 
-    double nextVal;
-    type nextOp;
-    size_t valCounter = 0;
     for (type t : types) {
         switch (t) {
         case Int:
-            nextVal = convertToInt(values[valCounter]);
+            currentSum = doMaths(currentSum, convertToInt(values[valCounter]), nextOp);
             valCounter++;
             break;
         case Float:
-            nextVal = convertToFloat(values[valCounter]);
+            currentSum = doMaths(currentSum, convertToFloat(values[valCounter]), nextOp);
             valCounter++;
+            break;
             break;
         case Plus:
             nextOp = Plus;
-            currentSum = currentSum + nextVal;
             break;
         case Minus:
             nextOp = Minus;
-            currentSum -= nextVal;
             break;
         case Divide:
             nextOp = Divide;
-            currentSum /= nextVal;
             break;
         case Multiply:
             nextOp = Multiply;
-            currentSum *= nextVal;
             break;
         case OpenParen:
             nextOp = OpenParen;
@@ -88,26 +106,26 @@ double evalInput(std::vector<type> types, std::vector<std::string> values) {
         default:
             std::cout << "Unknown";
         }
-        std::cout << "Current sum = " << currentSum << "\n";
-        std::cout << "Next val" << nextVal << "\n";
-        std::cout << "Next op" << nextOp << "\n";
+        std::cout << "\nCurrent sum = " << currentSum << "\n";
+        printType(nextOp);
+        std::cout << "\nNext val" << nextVal << "\n";
     }
-    switch (nextOp) {
-    case Plus:
-        currentSum += nextVal;
-        break;
-    case Minus:
-        currentSum -= nextVal;
-        break;
-    case Divide:
-        currentSum /= nextVal;
-        break;
-    case Multiply:
-        currentSum *= nextVal;
-        break;
-    default:
-        break;
-    }
+    // switch (nextOp) {
+    // case Plus:
+    //     currentSum += nextVal;
+    //     break;
+    // case Minus:
+    //     currentSum -= nextVal;
+    //     break;
+    // case Divide:
+    //     currentSum /= nextVal;
+    //     break;
+    // case Multiply:
+    //     currentSum *= nextVal;
+    //     break;
+    // default:
+    //     break;
+    // }
     std::cout << "RETURNING" << std::endl;
     return currentSum;
 }
