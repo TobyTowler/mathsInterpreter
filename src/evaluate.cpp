@@ -39,21 +39,7 @@ double doMaths(double cs, double nv, type nextOp) {
     }
 }
 
-/*
- * first and last item is always number
- *
- * n ... o ... n
- *
- * 4 + 4 - 4
- * 4 + (4 + 4)
- *
- *
- */
 numbers evalInput(std::vector<type> types, std::vector<std::string> values, size_t counter) {
-    // std::cout << "\n\ntypes";
-    // for (type t : types) {
-    //     printType(t);
-    // }
     double currentSum = 0;
     type nextOp;
     size_t valCounter = counter;
@@ -72,13 +58,7 @@ numbers evalInput(std::vector<type> types, std::vector<std::string> values, size
         std::vector<type> shortTypes;
         shortTypes.reserve(types.size() - typeCounter);
         shortTypes.assign(types.begin(), types.end());
-        std::cout << shortTypes.size();
-        std::cout << "\n\ntypes";
-        for (type t : shortTypes) {
-            printType(t);
-        }
         numbers nums = evalInput(shortTypes, values, valCounter);
-        std::cout << "TYPES" << typeCounter << "\n";
         typeCounter = nums.typeCounter;
         valCounter = nums.valCounter;
         if (typeCounter >= types.size() - 1) {
@@ -92,10 +72,6 @@ numbers evalInput(std::vector<type> types, std::vector<std::string> values, size
     }
 
     for (type t : types) {
-        std::cout << "\n\ntypes";
-        for (type t : types) {
-            printType(t);
-        }
         typeCounter++;
         switch (t) {
         case Int:
@@ -120,14 +96,13 @@ numbers evalInput(std::vector<type> types, std::vector<std::string> values, size
             nextOp = Multiply;
             break;
         case OpenParen: {
+            /* (4+4)
+             *
+             */
             std::vector<type> shortTypes;
             shortTypes.reserve(types.size() - typeCounter);
             shortTypes.assign(types.begin() + typeCounter - 1, types.end());
-            std::cout << shortTypes.size();
-            std::cout << "\n\ntypes";
-            for (type t : shortTypes) {
-                printType(t);
-            }
+
             numbers nums = evalInput(shortTypes, values, valCounter);
             std::cout << "TYPES" << typeCounter << "\n";
             typeCounter = nums.typeCounter;
@@ -145,25 +120,6 @@ numbers evalInput(std::vector<type> types, std::vector<std::string> values, size
         default:
             std::cout << "Unknown";
         }
-        std::cout << "\nCurrent sum = " << currentSum << "\n";
-        printType(nextOp);
     }
-    // switch (nextOp) {
-    // case Plus:
-    //     currentSum += nextVal;
-    //     break;
-    // case Minus:
-    //     currentSum -= nextVal;
-    //     break;
-    // case Divide:
-    //     currentSum /= nextVal;
-    //     break;
-    // case Multiply:
-    //     currentSum *= nextVal;
-    //     break;
-    // default:
-    //     break;
-    // }
-    std::cout << "RETURNING" << std::endl;
     return {currentSum, typeCounter, valCounter};
 }

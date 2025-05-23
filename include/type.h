@@ -15,30 +15,30 @@ enum type {
 inline void printType(type type) {
     switch (type) {
     case Int:
-        std::cout << "Int";
+        std::cout << " Int";
         break;
     case Float:
-        std::cout << "Float";
+        std::cout << " Float";
         break;
     case Plus:
-        std::cout << "Plus";
+        std::cout << " Plus";
         break;
     case Minus:
-        std::cout << "Minus";
+        std::cout << " Minus";
         break;
     case Divide:
-        std::cout << "Divide";
+        std::cout << " Divide";
         break;
     case Multiply:
-        std::cout << "Multiply";
+        std::cout << " Multiply";
         break;
     case OpenParen:
-        std::cout << "OpenParen";
+        std::cout << " OpenParen";
         break;
     case CloseParen:
-        std::cout << "CloseParen";
+        std::cout << " CloseParen";
         break;
     default:
-        std::cout << "Unknown";
+        std::cout << " Unknown";
     }
 }

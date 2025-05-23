@@ -82,7 +82,8 @@ std::pair<std::vector<type>, std::vector<std::string>> lexInput(std::string str)
             lexemes.push_back(CloseParen);
             break;
         default:
-            throw std::runtime_error("Lexer error: unknown character");
+            throw std::runtime_error(
+                "Lexer error: Unknown character, please enter a valid equation");
         }
     }
     return make_pair(lexemes, values);
