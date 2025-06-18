@@ -10,8 +10,13 @@ void runRepl(bool debug) {
     std::cout << "Welcome! Enter an equation or 'exit' to quit\n\n";
     while (input != "exit") {
         try {
-            std::cout << "> ";
+            std::cout << "\n> ";
             std::getline(std::cin, input);
+
+            if (input == "help") {
+                std::cout << "Enter a number or sum";
+                continue;
+            }
 
             std::pair<std::vector<type>, std::vector<std::string>> arr = lexInput(input);
             std::vector<type> lexedTypes = arr.first;
@@ -20,10 +25,10 @@ void runRepl(bool debug) {
                 spdlog::info("Lexed Types");
             }
 
-            // for (type t : lexedTypes) {
-            //     printType(t);
-            // }
-            // std::cout << "\n";
+            for (type t : lexedTypes) {
+                printType(t);
+            }
+            std::cout << "\n";
 
             parseInput(lexedTypes);
             if (debug) {
@@ -38,11 +43,11 @@ void runRepl(bool debug) {
             //     std::cout << t;
             // }
 
-            numbers result = evalInput(lexedTypes, lexedValues, 1);
+            double result = evalInput(lexedTypes, lexedValues);
             if (debug) {
                 spdlog::info("Evaluated");
             }
-            std::cout << "Evaluated output: " << result.val << std::endl;
+            std::cout << "Evaluated output: " << result << std::endl;
         } catch (const std::exception &e) {
             std::cout << e.what() << std::endl;
         }

@@ -4,9 +4,9 @@
 #include <string>
 #include <vector>
 
-struct numbers {
+struct NumberPacket {
     double val;
-    size_t typeCounter;
-    size_t valCounter;
+    bool isInt;
 };
-numbers evalInput(std::vector<type> types, std::vector<std::string> values, size_t counter);
+
+double evalInput(std::vector<type> types, std::vector<std::string> values);
